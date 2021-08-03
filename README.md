@@ -10,7 +10,7 @@
 
 2. Install this Spoon
 
-    The easiest way to do this is to [download the ZIP version of this Spoon](https://github.com/catskull/MusicMenuDisplay.spoon/releases/download/1.0/MusicMenuDisplay.spoon.zip), unzip it, then double click the MusicMenuDisplay.spoon folder. Hammerspoon will install it for you.
+    The easiest way to do this is to [download the ZIP version of this Spoon](https://github.com/catskull/MusicMenuDisplay.spoon/releases/download/2.0/MusicMenuDisplay.spoon.zip), unzip it, then double click the MusicMenuDisplay.spoon folder. Hammerspoon will install it for you.
 
     If you plan on modifying the Spoon and sending a pull request to this repo, then you should clone this repo into your `~/.hammerspoon/Spoons`
 
