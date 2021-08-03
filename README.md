@@ -1,5 +1,5 @@
-# SpotifyMenuDisplay.spoon
- Hammerspoon Spoon to display current Spotify track in menubar
+# MusicMenuDisplay.spoon
+ Hammerspoon Spoon to display current Spotify/Apple Music track in menubar
 
 ![Example](screenshot.png)
 
@@ -10,16 +10,16 @@
 
 2. Install this Spoon
 
-    The easiest way to do this is to [download the ZIP version of this Spoon](https://github.com/catskull/SpotifyMenuDisplay.spoon/releases/download/1.0/SpotifyMenuDisplay.spoon.zip), unzip it, then double click the SpotifyMenuDisplay.spoon folder. Hammerspoon will install it for you.
+    The easiest way to do this is to [download the ZIP version of this Spoon](https://github.com/catskull/MusicMenuDisplay.spoon/releases/download/1.0/MusicMenuDisplay.spoon.zip), unzip it, then double click the MusicMenuDisplay.spoon folder. Hammerspoon will install it for you.
 
     If you plan on modifying the Spoon and sending a pull request to this repo, then you should clone this repo into your `~/.hammerspoon/Spoons`
 
 ## Usage
-In your Hammerspoon config, load this Spoon: `hs.loadSpoon("SpotifyMenuDisplay")`
+In your Hammerspoon config, load this Spoon: `hs.loadSpoon("MusicMenuDisplay")`
 
-Then start the plugin: `spoon.SpotifyMenuDisplay:start()`
+Then start the plugin: `spoon.MusicMenuDisplay:start()`
 
-`spoon.SpotifyMenuDisplay:start()` takes an optional parameter, a number of seconds it should refresh at. Be default, it is 5. Increase or decrease as you see fit.
+`spoon.MusicMenuDisplay:start()` takes an optional parameter, a number of seconds it should refresh at. Be default, it is 5. Increase or decrease as you see fit.
 
 You can click the menubar item to pause/play the track.
 
