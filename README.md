@@ -17,9 +17,10 @@
 ## Usage
 In your Hammerspoon config, load this Spoon: `hs.loadSpoon("MusicMenuDisplay")`
 
-Then start the plugin: `spoon.MusicMenuDisplay:start()`
+To start the plugin with spotify: `spoon.MusicMenuDisplay:start("spotify")`
+To start the plugin with Apple Music/iTunes: `spoon.MusicMenuDisplay:start("apple")`
 
-`spoon.MusicMenuDisplay:start()` takes an optional parameter, a number of seconds it should refresh at. Be default, it is 5. Increase or decrease as you see fit.
+`spoon.MusicMenuDisplay:start()` takes an optional parameter, a number of seconds it should refresh at. Be default, it is 5. Increase or decrease as you see fit. To start the plugin with Apple Music and refresh every 10 seconds: `spoon.MusicMenuDisplay:start("apple", 10)`
 
 You can click the menubar item to pause/play the track.
 

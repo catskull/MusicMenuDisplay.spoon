@@ -2,30 +2,39 @@ local obj={}
 obj.__index = obj
 
 -- Metadata
-obj.name = "Spotify Menu Display"
-obj.version = "1.0"
+obj.name = "Music Menu Display"
+obj.version = "2.0"
 obj.author = "catskull <bro@catskull.net>"
 obj.license = "MIT"
-obj.homepage = "https://github.com/catskull/SpotifyMenuDisplay.spoon"
+obj.homepage = "https://github.com/catskull/MusicMenuDisplay.spoon"
 
--- Show current spotify artist - song in menubar
-function obj:makeSpotifyMenu()
-  if spotifyMenu == nil then
-    spotifyMenu = hs.menubar.new()
-    spotifyMenu:setClickCallback(function()
-      hs.spotify.playpause()
+obj.app = "spotify"
+
+-- Show current spotify/apple music artist - song in menubar
+function obj:makeMusicMenu()
+  if obj.app == "spotify" then
+    app = hs.spotify
+  else
+    app = hs.itunes
+  end
+
+  if musicMenu == nil then
+    musicMenu = hs.menubar.new()
+    musicMenu:setClickCallback(function()
+      app.playpause()
     end)
   end
-  if hs.spotify.getPlaybackState() ~= hs.spotify.state_stopped then
-    spotifyMenu:setTitle(hs.spotify.getCurrentArtist() .. " - " .. hs.spotify.getCurrentTrack())
-  elseif spotifyMenu:title() ~= '' then
-    spotifyMenu:setTitle('')
+  if app.getPlaybackState() ~= app.state_stopped then
+    musicMenu:setTitle(app.getCurrentArtist() .. " - " .. app.getCurrentTrack())
+  elseif musicMenu:title() ~= '' then
+    musicMenu:setTitle('')
   end
 end
 
-function obj:start(interval)
-  spotifyMenuTimer = hs.timer.new((interval or 5), obj.makeSpotifyMenu)
-  spotifyMenuTimer:start()
+function obj:start(source, interval)
+  obj.app = (source or "spotify")
+  musicMenuTimer = hs.timer.new((interval or 5), obj.makeMusicMenu)
+  musicMenuTimer:start()
 end
 
 return obj
